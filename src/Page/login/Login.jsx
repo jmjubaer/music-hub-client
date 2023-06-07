@@ -13,11 +13,9 @@ const Login = () => {
     const location = useLocation()
     const from = location?.state?.from || "/";
     const navigate = useNavigate();
-    const {signIn,createUser} =  useAuthContext()
+    const {signIn} =  useAuthContext()
     const [show,setShow] = useState(false);
-    const [err, setErr] = useState("ghdxf");
-    const [condition, setCondition] = useState("login");
-    const hostingURL = `https://api.imgbb.com/1/upload?key=${import.meta.env.VITE_IMAGE_KEY}`;
+    const [err, setErr] = useState("");
     const handleSignIn = (data) => {
         console.log(data);
         signIn(data?.email, data?.password)
@@ -28,41 +26,7 @@ const Login = () => {
             })
         })
     }
-    console.log(err);
-    const handleSignUp = (data) => {
-        if(!(data?.password === data?.confirm)){
-            setErr('Passwords do not match. Please try again.');
-            console.log(err);
-            return
-        }
-        // const formData = new FormData();
-        // formData.append('image',data.image[0])
-        // fetch(hostingURL,{
-        //     method: 'POST',
-        //     body: formData
-        // })
-        // .then(res => res.json())
-        // .then(data => {
-        //     if(data.data.success){
-        //         createUser(data?.email, data?.password)
-        //         .then(result => {
-        //             const user = result.user;
-        //             updateProfile(user,{
-        //                 displayName: data?.name,
-        //                 photoURL: data.data.display_url
-        //             })
 
-        //             Swal.fire({
-        //                 position: 'top-end',
-        //                 icon: 'success',
-        //                 title: 'User created successful',
-        //                 showConfirmButton: false,
-        //                 timer: 1500
-        //             })
-        //         })
-        //     }
-        // })
-    }
 
   return (
     <div className="min-h-screen flex items-center justify-center">
@@ -83,7 +47,7 @@ const Login = () => {
                 <span className="text-[red]">{err}</span>
                 <input className="jm_btn rounded-3xl w-full" type="submit" value="Login" />
             </form>
-            <p className="my-5">New Music hub ? <button className="underline text-accent">Create Account.</button></p>
+            <p className="my-5">New Music hub ? <Link to={"/signup"} className="underline text-accent">Create Account.</Link></p>
             <div className="divider">OR</div>
             <div className="flex gap-5">
                 <button className="flex jm_btn rounded-md w-full items-center">
