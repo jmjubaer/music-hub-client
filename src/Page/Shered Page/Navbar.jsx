@@ -52,7 +52,8 @@ const Navbar = () => {
                                 Classes
                             </NavLink>
                         </li>
-                        <li>
+                        {
+                            user && <li>
                             <NavLink
                                 className={({ isActive }) =>
                                     isActive ? "text-[#C3345F]" : ""
@@ -62,6 +63,7 @@ const Navbar = () => {
                                 Dashboard{" "}
                             </NavLink>
                         </li>
+                        }
                     </ul>
                     <div className="flex items-center gap-5">
                         <Tooltip id="my-tooltip" />

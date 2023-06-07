@@ -5,12 +5,12 @@ import { initializeApp } from "firebase/app";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyAXEFMCz4-fPPmzWeP_R2cnI43XHInnbIM",
-  authDomain: "music-hub-8cb59.firebaseapp.com",
-  projectId: "music-hub-8cb59",
-  storageBucket: "music-hub-8cb59.appspot.com",
-  messagingSenderId: "850663561327",
-  appId: "1:850663561327:web:5c67e309cb2d657d33959a"
+  apiKey: import.meta.env.VITE_APIKEY,
+  authDomain: import.meta.env.VITE_AUTHDOMAIN,
+  projectId: import.meta.env.VITE_PROJECTID,
+  storageBucket: import.meta.env.VITE_STORAGEBUCKET,
+  messagingSenderId: import.meta.env.VITE_MESSAGINGSENDERID,
+  appId: import.meta.env.VITE_APPID,
 };
 
 // Initialize Firebase

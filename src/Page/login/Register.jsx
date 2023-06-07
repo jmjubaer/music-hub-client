@@ -7,6 +7,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import useAuthContext from '../../Hooks/UseAuthContext';
 import Swal from 'sweetalert2';
 import { updateProfile } from 'firebase/auth';
+import SocialLogin from './SocialLogin';
 const Register = () => {
     const navigate = useNavigate();
     const {createUser} = useAuthContext();
@@ -98,6 +99,8 @@ const Register = () => {
                 </form>
                 
                 <p className="my-5">Have an account ? <Link to={"/login"} className="underline text-accent" onClick={() => setCondition("login")}>Login Now.</Link></p>
+                <div className="divider">OR</div>
+                <SocialLogin></SocialLogin>
             </div>
         </div>
     );

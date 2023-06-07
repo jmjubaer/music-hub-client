@@ -12,10 +12,10 @@ const Footer = () => {
                     <Logo></Logo>
                     <p className="my-5">Edwin Diaz is a software and web technologies engineer, a life coach trainer who is also a serial .</p>
                     <ul className="flex gap-4">
-                        <li><a href="#" className="bg-[#D6BBC2] text-black border p-2 inline-block text-white"><FaGoogle/></a></li>
-                        <li><a href="#" className="bg-[#D6BBC2] text-black border p-2 inline-block text-white "><FaTwitter/></a></li>
-                        <li><a href="#" className="bg-[#D6BBC2] border text-black p-2 inline-block text-white"><FaInstagram/></a></li>
-                        <li><a href="#" className="bg-[#D6BBC2] border text-black p-2 inline-block text-white"><FaLinkedin/></a></li>
+                        <li><a href="#" className="bg-[#D6BBC2] text-[red] border p-2 inline-block"><FaGoogle className="text-xl"/></a></li>
+                        <li><a href="#" className="bg-[#D6BBC2] text-[#1C96E8] border p-2 inline-block  "><FaTwitter className="text-xl"/></a></li>
+                        <li><a href="#" className="bg-[#D6BBC2] border text-[#F601D0] p-2 inline-block "><FaInstagram className="text-xl"/></a></li>
+                        <li><a href="#" className="bg-[#D6BBC2] border text-[blue] p-2 inline-block"><FaLinkedin className="text-xl"/></a></li>
                     </ul>
                 </div>
                 <div className="">
