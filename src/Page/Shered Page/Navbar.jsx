@@ -89,7 +89,7 @@ const Navbar = () => {
                                 data-tooltip-id="my-tooltip"
                                 data-tooltip-content={user?.displayName}
                                 data-tooltip-place="top"
-                                to="/profiles"
+                                to="/profile"
                             >
                                 <img
                                     data-tooltip-id="my-tooltip"
