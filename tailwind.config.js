@@ -7,7 +7,8 @@ export default {
   theme: {
     colors: {
       'main': '#ff9aa6',
-      'second ': '##D6BBC2'
+      'black' : '#000',
+      'secondery': '#D6BBC2'
     },
     fontFamily: {
       'sans': ['Poppins', 'sans-serif'],
