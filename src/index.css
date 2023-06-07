@@ -8,5 +8,31 @@
 @tailwind utilities;
 
 .jm_nav{
-    @apply block lg:flex justify-between lg:col-span-3 items-center absolute lg:static lg:w-auto top-0 left-0 overflow-hidden h-screen lg:h-auto duration-500 bg-[#ff6899] lg:bg-[transparent] lg:p-0 z-50
+    @apply block lg:flex justify-between lg:col-span-3 items-center absolute lg:static lg:w-auto top-0 left-0 overflow-hidden h-screen lg:h-auto duration-500 bg-[#ff9aa6] lg:bg-[transparent] lg:p-0 z-50
   }
+
+  .login_bg{
+    background:linear-gradient(rgba(0, 0, 0, 0.3),rgba(0, 0, 0, 0.3)) ,url('https://media.istockphoto.com/id/1394007857/photo/overview-of-the-valley-near-el-chalt%C3%A9n-patagonia-argentina.jpg?s=612x612&w=0&k=20&c=fI6fMs8FRXloSyfrfPkC9V5PmGhqx1O2ebVIVJWJBfI=') no-repeat;
+    background-size: cover;
+  }
+
+  .jm_input{
+    @apply w-full py-3 px-5 my-3 rounded-3xl bg-[#ff9aa6] bg-opacity-50  placeholder:text-[#fff]
+  }
+.jm_btn{
+  @apply bg-gradient-to-r from-main to-secondery text-white p-3 mt-5 cursor-pointer
+}
+
+.custom-file-upload {
+  display: inline-block;
+  padding: 6px 12px;
+  cursor: pointer;
+  background-color: #e6e6e6;
+  border: 1px solid #ccc;
+  border-radius: 4px; 
+  @apply w-28 h-28 rounded-full mx-auto flex items-center justify-center
+}
+
+.custom-file-upload:hover {
+  background-color: #d4d4d4;
+}

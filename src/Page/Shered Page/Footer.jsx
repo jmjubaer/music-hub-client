@@ -3,7 +3,7 @@ import logo from "../../assets/logo.jpg";
 import { Link } from "react-router-dom";
 import { FaGoogle,FaFacebook, FaInstagram, FaLinkedin, FaTwitter, FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
 import Logo from "./Logo";
-
+//TODO: add link and change design style
 const Footer = () => {
     return (
         <div className="bg-main bg-opacity-50 py-10">

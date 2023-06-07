@@ -8,7 +8,8 @@ export default {
     colors: {
       'main': '#ff9aa6',
       'black' : '#000',
-      'secondery': '#D6BBC2'
+      'secondery': '#D6BBC2',
+      'white': '#fff'
     },
     fontFamily: {
       'sans': ['Poppins', 'sans-serif'],
