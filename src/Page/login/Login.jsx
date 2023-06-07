@@ -6,24 +6,35 @@ import useAuthContext from "../../Hooks/UseAuthContext";
 // import SocialLogin from "./SocialLogin";
 import bg from '../../assets/login/login-bg.jpg'
 import { useForm } from "react-hook-form";
-import { updateProfile } from "firebase/auth";
+import 'react-toastify/dist/ReactToastify.css';
 
 const Login = () => {
-    const { register, handleSubmit} = useForm();
+    const { register, handleSubmit,reset} = useForm();
     const location = useLocation()
     const from = location?.state?.from || "/";
     const navigate = useNavigate();
     const {signIn} =  useAuthContext()
     const [show,setShow] = useState(false);
-    const [err, setErr] = useState("");
     const handleSignIn = (data) => {
         console.log(data);
         signIn(data?.email, data?.password)
         .then(result => {
             const user = result.user;
-            updateProfile(user,{
-                displayName: data?.name,
+            Swal.fire({
+                icon: 'success',
+                title: 'User Login successful',
+                showConfirmButton: false,
+                timer: 1500
             })
+            reset();
+            navigate('/')
+        })
+        .catch(err => {
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: `${err.message}`
+              })
         })
     }
 
@@ -44,7 +55,6 @@ const Login = () => {
                         </span>
                 </div>
 
-                <span className="text-[red]">{err}</span>
                 <input className="jm_btn rounded-3xl w-full" type="submit" value="Login" />
             </form>
             <p className="my-5">New Music hub ? <Link to={"/signup"} className="underline text-accent">Create Account.</Link></p>
