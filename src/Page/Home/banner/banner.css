@@ -50,3 +50,7 @@
     stroke-dasharray: 125.6;
     transform: rotate(-90deg);
   }
+
+  .slider_overlay {
+    @apply absolute z-50 text-white w-full h-full bg-main top-0 left-0 text-left dark:bg-opacity-40 bg-opacity-80
+  }

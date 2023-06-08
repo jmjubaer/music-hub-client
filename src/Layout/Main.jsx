@@ -7,7 +7,7 @@ import Footer from '../Page/Shered Page/Footer';
 const Main = () => {
     const {theme} =  useAuthContext();
     return (
-        <div data-theme={theme}>
+        <div data-theme={theme} >
             <Navbar></Navbar>
             <Outlet/>
             <Footer></Footer>
