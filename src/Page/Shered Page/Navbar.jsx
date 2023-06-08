@@ -10,7 +10,7 @@ const Navbar = () => {
     const { user,toggleTheme } = useAuthContext();
     const [control, setControl] = useState(false);
     return (
-        <div className="bg-main bg-opacity-50 px-5 py-3 text-white">
+        <div className="bg-main z-50 bg-opacity-50 px-5 py-3 text-white">
             <nav className="flex lg:grid lg:grid-cols-5 justify-between items-center">
                 <div className="lg:col-span-2 flex gap-2">
                     <Logo></Logo>
@@ -37,7 +37,7 @@ const Navbar = () => {
                                 className={({ isActive }) =>
                                     isActive ? "text-[#C3345F]" : ""
                                 }
-                                to="/myToy"
+                                to="/instructors"
                             >
                                 Instructors
                             </NavLink>
@@ -47,7 +47,7 @@ const Navbar = () => {
                                 className={({ isActive }) =>
                                     isActive ? "text-[#C3345F]" : ""
                                 }
-                                to="/addToys"
+                                to="/classes"
                             >
                                 Classes
                             </NavLink>
@@ -58,7 +58,7 @@ const Navbar = () => {
                                 className={({ isActive }) =>
                                     isActive ? "text-[#C3345F]" : ""
                                 }
-                                to="/blogs"
+                                to="/dashboard"
                             >
                                 Dashboard{" "}
                             </NavLink>

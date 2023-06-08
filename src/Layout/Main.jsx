@@ -9,7 +9,9 @@ const Main = () => {
     return (
         <div data-theme={theme} >
             <Navbar></Navbar>
-            <Outlet/>
+            <div className="min-h-[calc(100vh-150px)]">
+            <   Outlet/>
+            </div>
             <Footer></Footer>
         </div>
     );

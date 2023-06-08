@@ -5,6 +5,7 @@ import Login from "../Page/login/Login";
 import Register from "../Page/login/Register";
 import Profiles from "../Page/login/Profiles";
 import NotFound from "../Page/Shered Page/NotFound";
+import Classes from "../Page/Classes/Classes";
 
 const routes = createBrowserRouter([
     {
@@ -27,6 +28,10 @@ const routes = createBrowserRouter([
             {
                 path: '/profile',
                 element: <Profiles/>
+            },
+            {
+                path: '/classes',
+                element: <Classes/>
             }
         ]
     }
