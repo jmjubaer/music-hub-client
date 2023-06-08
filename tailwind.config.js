@@ -5,18 +5,19 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    colors: {
-      'main': '#ff9aa6',
-      'black' : '#000',
-      'secondery': '#D6BBC2',
-      'white': '#fff'
-    },
     fontFamily: {
       'sans': ['Poppins', 'sans-serif'],
       'serif': ['Geologica', "sans-serif"],
       'logo': ['Chokokutai', 'cursive'],
     },
-    extend: {},
+    extend: {
+      colors: {
+        'main': '#ff9aa6',
+        'black' : '#000',
+        'secondery': '#D6BBC2',
+        'white': '#fff'
+      },
+    },
   },
   plugins: [require("daisyui")],
   daisyui: {

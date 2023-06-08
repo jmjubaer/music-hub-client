@@ -9,7 +9,7 @@ const Main = () => {
     return (
         <div data-theme={theme}>
             <Navbar></Navbar>
-                <Outlet/>
+            <Outlet/>
             <Footer></Footer>
         </div>
     );
