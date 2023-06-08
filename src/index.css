@@ -20,10 +20,13 @@
     @apply w-full py-3 px-5 my-3 rounded-3xl bg-[#ff9aa6] bg-opacity-50  placeholder:text-[#fff]
   }
 .jm_btn{
-  @apply bg-gradient-to-r from-main to-secondery text-white p-3 px-5 mt-5 cursor-pointer
+  @apply bg-gradient-to-r from-main to-secondery text-xl uppercase text-white py-4 px-8 mt-5 cursor-pointer
+}
+.jm_btn-tiny{
+  @apply bg-gradient-to-r from-main to-secondery text-xl uppercase text-white py-3 px-6 mt-5 cursor-pointer
 }
 .jm_btn_outline{
-  @apply border-2 p-3 mt-5 cursor-pointer rounded-md
+  @apply border-2 p-3 mt-5 cursor-pointer rounded-md uppercase
 }
 
 .custom-file-upload {
