@@ -4,17 +4,11 @@ import { useQuery } from '@tanstack/react-query';
 import axios from 'axios';
 import useAuthContext from '../../../Hooks/UseAuthContext';
 import ClassCard from '../../../Components/ClassCard';
+import useClasses from '../../../Hooks/useclasses';
 
 const PopularClass = () => {
-    const {loading,theme} = useAuthContext();
-    const {data: classes} = useQuery({
-        queryKey: ['popular'],
-        enabled:!loading,
-        queryFn: async() => {
-            const res = await axios('http://localhost:5000/popularclasses');
-            return res.data;
-        }
-    })
+    const {theme} = useAuthContext();
+    const {classes} = useClasses();
     return (
         <div className={`my-24 jm_container ${theme === "dark" && "dark"} text-center`}>
             <Title heading={"Our Popular Classes"} subHeading={"Explore our music class"}></Title>

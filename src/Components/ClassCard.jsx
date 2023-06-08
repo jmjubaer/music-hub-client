@@ -17,7 +17,7 @@ const ClassCard = ({data}) => {
     return (
         <div data-aos="flip-right" className={`card text-gray-600 card-compact rounded-none border shadow-2xl relative dark:bg-main`}>
             <figure><img src={image} className='h-60 w-full border border-main rounded-b-full' alt="Shoes" /></figure>
-            <div className="card-body ">
+            <div className="card-body text-left">
                 <h2 className="text-2xl text-center font-semibold my-5">{className}</h2>
                 <div className="flex justify-between">
                     <p className='text-lg'><span className='font-bold text-[#FF0078]'>Price: </span> ${price}</p>
