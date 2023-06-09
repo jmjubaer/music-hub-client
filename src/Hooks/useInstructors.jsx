@@ -5,7 +5,7 @@ import axios from 'axios';
 
 const useInstructors = () => {
     const {loading} = useAuthContext();
-    const {data: classes,refetch,loading: classLoading} = useQuery({
+    const {data: instructors,refetch,loading: instructorsLoading} = useQuery({
         queryKey: ['instructor'],
         enabled:!loading,
         queryFn: async() => {
@@ -13,7 +13,7 @@ const useInstructors = () => {
             return res.data;
         }
     })
-    return {classes,refetch,classLoading}
+    return {instructors,refetch,instructorsLoading}
 };
 
 export default useInstructors;

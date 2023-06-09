@@ -12,11 +12,11 @@ const PopularClass = () => {
     const popular = classes?.slice(0,6);
     return (
         <div className={`my-24 jm_container ${theme === "dark" && "dark"} text-center`}>
-            <Title heading={"Our Popular Classes"} subHeading={"Explore our music class"}></Title>
+            <Title heading={"Our Popular Classes"} subHeading={"Explore our classes"}></Title>
             <div className="grid grid-cols-3 gap-8 mt-20 mb-10">
                 {
                     popular?.map(item => <ClassCard 
-                    key={item?.id}
+                    key={item?._id}
                     data={item}
                     ></ClassCard>)
                 }
