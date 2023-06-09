@@ -22,6 +22,9 @@
 .jm_btn{
   @apply bg-gradient-to-r from-main to-secondery text-xl uppercase text-white py-4 px-8 mt-5 cursor-pointer
 }
+.btn_disabled{
+  @apply disabled:bg-gradient-to-r disabled:from-secondery disabled:to-secondery disabled:text-opacity-60 disabled:cursor-not-allowed
+}
 .jm_btn-tiny{
   @apply bg-gradient-to-r from-main to-secondery text-xl uppercase text-white py-3 px-6 mt-5 cursor-pointer
 }

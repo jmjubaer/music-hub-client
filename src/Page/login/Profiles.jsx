@@ -40,7 +40,7 @@ return (
                 <p className="text-xl">{user?.phoneNumber}</p>
               </div>
             </div>
-            <button onClick={handleSignOut} className="jm_btn mx-auto text-xl rounded-md mt-5 w-1/2">Log out</button>
+            <button onClick={handleSignOut} className="jm_btn mx-auto text-xl rounded-md mt-5">Log out</button>
         </div>
     </div>
     );
