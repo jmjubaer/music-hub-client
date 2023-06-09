@@ -1,13 +1,19 @@
-import React from 'react';
-import useAuthContext from '../Hooks/UseAuthContext';
-import { useQuery } from '@tanstack/react-query';
-import axios from 'axios';
+import Aos from 'aos';
+import React, { useEffect } from 'react';
 // TODO: SET A button to navigate the instructor class page (optional)
 const InstructorCard = ({instructors,classes}) => {
     const {image,name,email,_id} = instructors || {};
     const instructorsClasses = classes?.filter(c => c.email === email);
+    useEffect(() =>{
+        Aos.init({
+            offset: 100,
+            duration: 600,
+            easing: 'ease-in-sine',
+            // delay: 0,
+        })
+    },[])
     return (
-        <div className="card border rounded-none shadow-xl">
+        <div  data-aos="zoom-in" className="card border dark:text-slate-100 dark:bg-main dark:bg-opacity-50 rounded-none shadow-xl">
             <figure><img src={image} className='w-full h-80 object-cover' alt="Shoes" /></figure>
             <div className="p-5 text-center ">
                 <h2 className="text-2xl font-bold text-sky-600">{name}</h2>

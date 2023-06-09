@@ -3,6 +3,7 @@ import { FaGithub, FaGoogle } from 'react-icons/fa';
 import useAuthContext from '../../Hooks/UseAuthContext';
 import { useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
+import axios from 'axios';
 
 const SocialLogin = () => {
     const navigate = useNavigate()
@@ -11,13 +12,27 @@ const SocialLogin = () => {
         googleSignIn()
         .then(result => {
             const user = result.user;
-            Swal.fire({
-                icon: 'success',
-                title: 'User created successful',
-                showConfirmButton: false,
-                timer: 1500
-            })
-            navigate('/')
+            if(user){
+                const newUser = {
+                    image: user?.photoURL,
+                    name: user?.displayName,
+                    email: user?.email,
+                    roll: "student"
+                }
+                axios.post('http://localhost:5000/user',newUser)
+                .then(res => {
+                    console.log(res.data);
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'User created successful',
+                        showConfirmButton: false,
+                        timer: 1500
+                    })
+                    navigate('/')
+                })
+            }
+
+            // console.log(newUser);
         })
         .catch( err => {
             console.log(err);

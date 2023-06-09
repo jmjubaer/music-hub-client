@@ -5,6 +5,7 @@ import axios from 'axios';
 import useAuthContext from '../../../Hooks/UseAuthContext';
 import ClassCard from '../../../Components/ClassCard';
 import useClasses from '../../../Hooks/useclasses';
+import { Link } from 'react-router-dom';
 
 const PopularClass = () => {
     const {theme} = useAuthContext();
@@ -21,7 +22,7 @@ const PopularClass = () => {
                     ></ClassCard>)
                 }
             </div>
-            <button className='jm_btn rounded-sm '>See all Class</button>
+            <Link to={"/classes"} className='block mx-auto w-fit mt-8'><button className='jm_btn rounded-sm '>See all Class</button></Link>
         </section>
     );
 };

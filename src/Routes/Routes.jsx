@@ -6,6 +6,7 @@ import Register from "../Page/login/Register";
 import Profiles from "../Page/login/Profiles";
 import NotFound from "../Page/Shered Page/NotFound";
 import Classes from "../Page/Classes/Classes";
+import Instructor from "../Page/Instractor/Instructor";
 
 const routes = createBrowserRouter([
     {
@@ -32,6 +33,10 @@ const routes = createBrowserRouter([
             {
                 path: '/classes',
                 element: <Classes/>
+            },
+            {
+                path: '/instructors',
+                element: <Instructor/>
             }
         ]
     }

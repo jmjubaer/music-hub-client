@@ -3,6 +3,7 @@ import Title from '../../../Components/Title';
 import useInstructors from '../../../Hooks/useInstructors';
 import InstructorCard from '../../../Components/InstructorCard';
 import useClasses from '../../../Hooks/useclasses';
+import { Link } from 'react-router-dom';
 
 const PopularInstructor = () => {
     const {instructors} = useInstructors();
@@ -20,6 +21,7 @@ const PopularInstructor = () => {
                     ></InstructorCard>)
                 }
             </div>
+           <Link to={"/instructors"} className='block mx-auto w-fit mt-8'><button className='jm_btn rounded-sm '>See all Instructor</button></Link>
         </section>
     );
 };

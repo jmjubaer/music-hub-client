@@ -8,6 +8,7 @@ import useAuthContext from '../../Hooks/UseAuthContext';
 import Swal from 'sweetalert2';
 import { updateProfile } from 'firebase/auth';
 import SocialLogin from './SocialLogin';
+import axios from 'axios';
 const Register = () => {
     const navigate = useNavigate();
     const {createUser} = useAuthContext();
@@ -32,7 +33,7 @@ const Register = () => {
             toast("Password Must have a special character")
             return
         }
-        console.log(data);
+        
         const formData = new FormData();
         formData.append('image',data.image[0])
         fetch(hostingURL,{
@@ -50,15 +51,26 @@ const Register = () => {
                         displayName: data?.name,
                         photoURL: imgRes?.data?.display_url
                     })
-
-                    Swal.fire({
-                        icon: 'success',
-                        title: 'User created successful',
-                        showConfirmButton: false,
-                        timer: 1500
-                    })
-                    reset();
-                    navigate('/')
+                    if(user){
+                        const newUser = {
+                            image: imgRes?.data?.display_url,
+                            name: data?.name,
+                            email: data?.email,
+                            roll: "user"
+                        }
+                        axios.post('http://localhost:5000/user',newUser)
+                        .then(res => {
+                            console.log(res.data);
+                            Swal.fire({
+                                icon: 'success',
+                                title: 'User created successful',
+                                showConfirmButton: false,
+                                timer: 1500
+                            })
+                            reset();
+                            navigate('/')
+                        })
+                    }
                 })
                 .catch( err => {
                     console.log(err);
