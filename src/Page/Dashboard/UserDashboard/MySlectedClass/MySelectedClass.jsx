@@ -37,7 +37,7 @@ const MySelectedClass = () => {
                     </thead>
                     <tbody>
                         {
-                            classes.map((item,idx) => <ClassRow 
+                            classes?.map((item,idx) => <ClassRow 
                                 item={item}
                                 idx={idx}
                                 key={item?._id}></ClassRow>)

@@ -2,7 +2,6 @@ import React from "react";
 import { FaTrash, FaTrashAlt } from "react-icons/fa";
 
 const ClassRow = ({item,idx}) => {
-    console.log(item);
     const {className,image,instructor,price} = item || {};
     return (
         <tr>
