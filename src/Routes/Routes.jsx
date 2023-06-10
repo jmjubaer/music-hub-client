@@ -11,6 +11,7 @@ import Dashboard from "../Layout/Dashboard";
 import MySelectedClass from "../Page/Dashboard/UserDashboard/MySlectedClass/MySelectedClass";
 import MyEnrolledClass from "../Page/Dashboard/UserDashboard/MyEnrolledClass/MyEnrolledClass";
 import PrivateRoute from "./PrivateRoute";
+import ManageClass from "../Page/Dashboard/Admin/ManageClass/ManageClass";
 
 const routes = createBrowserRouter([
     {
@@ -55,6 +56,10 @@ const routes = createBrowserRouter([
             {
                 path: 'enrolledclass',
                 element: <MyEnrolledClass/>
+            },
+            {
+                path: 'manageclass',
+                element: <ManageClass/>
             }
         ]
     }
