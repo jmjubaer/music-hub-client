@@ -7,6 +7,7 @@ import Profiles from "../Page/login/Profiles";
 import NotFound from "../Page/Shered Page/NotFound";
 import Classes from "../Page/Classes/Classes";
 import Instructor from "../Page/Instractor/Instructor";
+import Dashboard from "../Layout/Dashboard";
 
 const routes = createBrowserRouter([
     {
@@ -39,6 +40,10 @@ const routes = createBrowserRouter([
                 element: <Instructor/>
             }
         ]
+    },
+    {
+        path: "dashboard",
+        element: <Dashboard/>
     }
 ])
 

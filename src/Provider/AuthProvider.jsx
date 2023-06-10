@@ -1,6 +1,7 @@
 import React, { createContext, useEffect, useState } from 'react';
 import { GithubAuthProvider, GoogleAuthProvider, createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut } from "firebase/auth";
 import app from '../firebase/firebase.config';
+import axios from 'axios';
 
 export const AuthContext = createContext(null)
 
@@ -42,8 +43,19 @@ const AuthProvider = ({children}) => {
     useEffect(()=> {
         const unSubscribe = onAuthStateChanged(auth,(loggedUser => {
             setUser(loggedUser)
-            setLoading(false)
-            // console.log(loggedUser);
+            if(loggedUser){
+                axios.post('http://localhost:5000/jwt',{email: loggedUser.email})
+                .then(res => {
+                    localStorage.setItem('music-hub-token',JSON.stringify(res.data));
+                    setLoading(false)
+                })
+                .catch(function (error) {
+                    console.log(error);
+                  });
+            }else{
+                localStorage.removeItem('music-hub-token');
+                setLoading(false)
+            }
         }))
         return () => {
             unSubscribe();
