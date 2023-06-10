@@ -45,3 +45,9 @@
 .custom-file-upload:hover {
   background-color: #d4d4d4;
 }
+.menu li {
+  @apply text-xl 
+}
+.menu li a{
+  @apply my-2
+}

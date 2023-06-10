@@ -8,6 +8,9 @@ import NotFound from "../Page/Shered Page/NotFound";
 import Classes from "../Page/Classes/Classes";
 import Instructor from "../Page/Instractor/Instructor";
 import Dashboard from "../Layout/Dashboard";
+import MySelectedClass from "../Page/Dashboard/UserDashboard/MySlectedClass/MySelectedClass";
+import MyEnrolledClass from "../Page/Dashboard/UserDashboard/MyEnrolledClass/MyEnrolledClass";
+import PrivateRoute from "./PrivateRoute";
 
 const routes = createBrowserRouter([
     {
@@ -42,8 +45,18 @@ const routes = createBrowserRouter([
         ]
     },
     {
-        path: "dashboard",
-        element: <Dashboard/>
+        path: "/dashboard",
+        element: <PrivateRoute><Dashboard/></PrivateRoute>,
+        children: [
+            {
+                path: 'selectedclass',
+                element: <MySelectedClass></MySelectedClass>
+            },
+            {
+                path: 'enrolledclass',
+                element: <MyEnrolledClass/>
+            }
+        ]
     }
 ])
 

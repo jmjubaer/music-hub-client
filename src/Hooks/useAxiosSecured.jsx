@@ -20,13 +20,14 @@ const useAxiosSecured = () => {
         axiosSecured.interceptors.response.use((response) => response,
         async(error) => {
             if (error.response && (error.response.status === 401 || error.response.status === 403)) {
-                await logout();
-                navigate('/login')
+                // await logout();
+                // navigate('/login')
+                console.log(error.response);
             }
         }
     )
     },[]);
-    return[axiosSecured]
+    return{axiosSecured}
 };
 
 export default useAxiosSecured;
