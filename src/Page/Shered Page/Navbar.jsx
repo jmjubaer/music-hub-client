@@ -16,8 +16,7 @@ const Navbar = () => {
                     <Logo></Logo>
                 </div>
 
-                <div
-                    className={`jm_nav ${
+                <div className={`jm_nav ${
                         control ? "w-4/5 md:w-1/2 p-5" : "w-0"
                     }`}
                 >
@@ -58,7 +57,7 @@ const Navbar = () => {
                                 className={({ isActive }) =>
                                     isActive ? "text-[#C3345F]" : ""
                                 }
-                                to="/dashboard"
+                                to="/dashboard/selectedclass"
                             >
                                 Dashboard{" "}
                             </NavLink>

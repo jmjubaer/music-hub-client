@@ -46,7 +46,7 @@ const AuthProvider = ({children}) => {
             if(loggedUser){
                 axios.post('http://localhost:5000/jwt',{email: loggedUser.email})
                 .then(res => {
-                    localStorage.setItem('music-hub-token',JSON.stringify(res.data));
+                    localStorage.setItem('music-hub-token',res?.data?.token);
                     setLoading(false)
                 })
                 .catch(function (error) {

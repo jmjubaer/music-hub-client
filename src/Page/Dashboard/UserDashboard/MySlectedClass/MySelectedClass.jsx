@@ -2,72 +2,46 @@ import { useQuery } from "@tanstack/react-query";
 import React from "react";
 import useAxiosSecured from "../../../../Hooks/useAxiosSecured";
 import useAuthContext from "../../../../Hooks/UseAuthContext";
+import Cover from "../../../../Components/Cover";
+import Title from "../../../../Components/Title";
+import ClassRow from "./ClassRow";
 
 const MySelectedClass = () => {
     const {loading} = useAuthContext();
     const {axiosSecured} = useAxiosSecured();
-    const {data: classes} = useQuery({
+    const {data: classes,refetch} = useQuery({
         queryKey: ['selected'],
         enabled: !loading,
         queryFn: async() => {
-            axiosSecured('/selectedclass')
-            .then(res => {
-                console.log(res?.data);
-                return res.data;
-            })
+            const res = await axiosSecured('/selectedclass')
+            return res?.data
         }
     })
     console.log(classes);
     return (
-        <div>
+        <div className="w-11/12">
+            <div className="mb-14">
+                <Title heading={"My Selected Class"}></Title>
+            </div>
             <div className="overflow-x-auto">
-                <table className="table">
-                    <thead className="bg-main">
+                <table className="table text-base">
+                    <thead className="bg-main bg-opacity-90 text-base">
                         <tr>
                             <th>#</th>
-                            <th>Name</th>
-                            <th>Job</th>
-                            <th>Favorite Color</th>
-                            <th></th>
+                            <th>Class</th>
+                            <th>Instructor</th>
+                            <th>Price</th>
+                            <th>Action</th>
+                            <th>Action</th>
                         </tr>
                     </thead>
                     <tbody>
-                        {/* <tr>
-                            <th>#</th>
-                            <td>
-                                <div className="flex items-center space-x-3">
-                                    <div className="avatar">
-                                        <div className="mask mask-squircle w-12 h-12">
-                                            <img
-                                                src="/tailwind-css-component-profile-2@56w.png"
-                                                alt="Avatar Tailwind CSS Component"
-                                            />
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <div className="font-bold">
-                                            Hart Hagerty
-                                        </div>
-                                        <div className="text-sm opacity-50">
-                                            United States
-                                        </div>
-                                    </div>
-                                </div>
-                            </td>
-                            <td>
-                                Zemlak, Daniel and Leannon
-                                <br />
-                                <span className="badge badge-ghost badge-sm">
-                                    Desktop Support Technician
-                                </span>
-                            </td>
-                            <td>Purple</td>
-                            <th>
-                                <button className="btn btn-ghost btn-xs">
-                                    details
-                                </button>
-                            </th>
-                        </tr> */}
+                        {
+                            classes.map((item,idx) => <ClassRow 
+                                item={item}
+                                idx={idx}
+                                key={item?._id}></ClassRow>)
+                        }
                     </tbody>
                 </table>
             </div>
