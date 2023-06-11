@@ -1,9 +1,40 @@
-import React from 'react';
+import React, { useState } from 'react';
+import Swal from 'sweetalert2';
+import useAxiosSecured from '../../../../Hooks/useAxiosSecured';
+import { FaTimes } from "react-icons/fa";
 
 const Row = ({idx,item}) => {
-    const {className,email,image,price,totalSeats,status,instructor} = item || {};
+  const {axiosSecured} = useAxiosSecured();
+  const [feedback,setFeedback] = useState('')
+    const {className,email,image,price,totalSeats,status,instructor,_id} = item || {};
+    const handleFeedback = async() => {
+      const res = await axiosSecured.put(`/feedback/${_id}`,{feedback})
+      if(res.data.modifiedCount > 0 ){
+        setFeedback('');
+        Swal.fire({
+          position: 'top-end',
+          icon: 'success',
+          title: 'Feedback sent successful',
+          showConfirmButton: false,
+          timer: 1500
+        })
+      }
+    }
     return (
-        <tr>
+      <> 
+          <div className="modal" id="my_modal_8">
+            <div className="modal-box relative">
+              <h3 className="font-bold text-lg">Feedback!</h3>
+              <form action="">
+                <input value={feedback} onChange={(e) => setFeedback(e.target.value)} className='jm_input' type="text" name="feedback" id="" />
+              </form>
+                <a onClick={handleFeedback} href="#" className="btn">Yay!</a>
+                <a href="#" className="text-main text-2xl p-3 absolute top-0 right-0"><FaTimes/></a>
+              </div>
+          </div>
+
+          {/* Table row  */}
+          <tr>
             <td>{idx + 1}</td>
             <td>
                 <img className='w-12 h-12 rounded-md' src={image} alt="" />
@@ -20,9 +51,10 @@ const Row = ({idx,item}) => {
                 <button disabled={status === "approved"} className='btn btn-error'>denied    </button>
             </td>
             <td>
-                <button className='btn btn-error'>feedback</button>
+                <a href="#my_modal_8"  className='btn btn-error'>feedback</a>
             </td>
         </tr>
+      </>
     );
 };
 
