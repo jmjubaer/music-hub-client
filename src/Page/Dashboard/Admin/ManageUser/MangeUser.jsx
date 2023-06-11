@@ -13,7 +13,7 @@ const MangeUser = () => {
         enabled:!loading,
         queryFn: async() => {
             const res = await axiosSecured('/allUsers');
-            return res.data;
+            return res?.data;
         }
     })
     console.log(user);

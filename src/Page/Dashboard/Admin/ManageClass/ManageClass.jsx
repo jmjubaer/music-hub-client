@@ -9,7 +9,7 @@ const ManageClass = () => {
     const { user, loading } = useAuthContext();
     const { axiosSecured } = useAxiosSecured();
     const { data: allclasses, refetch } = useQuery({
-        queryKey: ["class", useQuery.email],
+        queryKey: ["class", user?.email],
         enabled: !loading,
         queryFn: async () => {
             const res = await axiosSecured(`/allclasses?email=${user?.email}`);
@@ -36,9 +36,10 @@ const ManageClass = () => {
                         </tr>
                     </thead>
                     <tbody>
-                        {allclasses?.map((item, idx) => (
+                        {allclasses?.map((item,idx) => (
                                     <Row
                                         item={item}
+                                        refetch={refetch}
                                         idx={idx}
                                         key={item?._id}
                                     ></Row>

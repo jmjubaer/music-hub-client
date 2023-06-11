@@ -6,6 +6,7 @@ const UserRow = ({item,idx,refetch}) => {
     const {name,email,role,image,_id} = item || {};
     const {axiosSecured} = useAxiosSecured();
     const makeAdmin = async() => {
+        console.log(_id);
         Swal.fire({
             title: 'Are you sure?',
             text: "Make the user Admin!",
