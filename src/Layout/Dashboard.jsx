@@ -3,14 +3,15 @@ import { FaBars, FaBookOpen, FaCalendarAlt, FaCalendarCheck, FaCalendarPlus, FaH
 import Logo from "../Page/Shered Page/Logo";
 import { Link, NavLink, Outlet } from "react-router-dom";
 import useAdmin from "../Hooks/useAdmin";
+import useIsInstructor from "../Hooks/useIsInstructor";
 
 const Dashboard = () => {
     const {isAdmin} = useAdmin();
-    const isInstructor = false;
+    const {isInstructor} = useIsInstructor();
     return (
         <div className="drawer lg:drawer-open">
             <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
-            <div className="drawer-content overflow-hidden flex items-center justify-center">
+            <div className="drawer-content overflow-hidden">
                 <Outlet></Outlet>
                 <label
                     htmlFor="my-drawer-2"
@@ -43,12 +44,12 @@ const Dashboard = () => {
                         </> : (isInstructor) ?
                         <>      
                         <li>
-                            <NavLink className={({ isActive }) => isActive ? "text-[#C3345F] bg-white": ""} to={'/dashboard/selectedclass'}>
-                                <FaCalendarPlus/>Add a Class</NavLink>
+                            <NavLink className={({ isActive }) => isActive ? "text-[#C3345F] bg-white": ""} to={'/dashboard/myClass'}>
+                                <FaCalendarAlt/>My Classes</NavLink>
                         </li>
                         <li>
-                            <NavLink className={({ isActive }) => isActive ? "text-[#C3345F] bg-white": ""} to={'/dashboard/enrolledclass'}>
-                                <FaCalendarAlt/>My Classes</NavLink>
+                            <NavLink className={({ isActive }) => isActive ? "text-[#C3345F] bg-white": ""} to={'/dashboard/addClass'}>
+                                <FaCalendarPlus/>Add a Class</NavLink>
                         </li>
                         </>
                         :

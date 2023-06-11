@@ -6,6 +6,7 @@ import { FaTimes } from "react-icons/fa";
 const Row = ({idx,item,refetch}) => {
   const {axiosSecured} = useAxiosSecured();
   const [feedback,setFeedback] = useState('')
+  const [itemId,setItemId] = useState("");
     const {className,email,image,price,totalSeats,status,instructor,_id} = item || {};
 
     const handleApproved = async() => {
@@ -36,8 +37,8 @@ const Row = ({idx,item,refetch}) => {
       }
     }
 
+    console.log(itemId);
     const handleFeedback = async(id) => {
-      console.log(id);
       // const res = await axiosSecured.put(`/feedback/${item?._id}`,{feedback})
       // if(res.data.modifiedCount > 0 ){
       //   setFeedback('');
@@ -80,7 +81,7 @@ const Row = ({idx,item,refetch}) => {
                       <a href="#" className="text-main text-2xl p-3 absolute top-0 right-0"><FaTimes/></a>
                     </div>
                 </div>
-                <a onClick={() => console.log(_id)} href="#my_modal_8"  className='btn btn-error'>feedback</a>
+                <a onClick={() => setItemId(_id)} href="#my_modal_8"  className='btn btn-error'>feedback</a>
             </td>
         </tr>
       </>

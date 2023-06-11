@@ -6,11 +6,14 @@ import { Tooltip } from "react-tooltip";
 import useAuthContext from "../../Hooks/UseAuthContext";
 import Logo from "./Logo";
 import useAdmin from "../../Hooks/useAdmin";
+import useIsInstructor from "../../Hooks/useIsInstructor";
 
 const Navbar = () => {
     const { user,toggleTheme } = useAuthContext();
     const [control, setControl] = useState(false);
-    const {isAdmin} = useAdmin()
+    const {isAdmin} = useAdmin();
+    const {isInstructor} = useIsInstructor();
+    console.log(isInstructor);
     return (
         <div className="bg-main z-50 bg-opacity-50 px-5 py-3 text-white">
             <nav className="flex lg:grid lg:grid-cols-5 justify-between items-center">
@@ -59,7 +62,10 @@ const Navbar = () => {
                                 className={({ isActive }) =>
                                     isActive ? "text-[#C3345F]" : ""
                                 }
-                                to={isAdmin ? "/dashboard/manageclass" : "/dashboard/selectedclass"}
+                                to={isAdmin ? "/dashboard/manageclass" 
+                                :(isInstructor) ? 
+                                "/dashboard/myClass"
+                                :"/dashboard/selectedclass"}
                             >
                                 Dashboard
                             </NavLink>

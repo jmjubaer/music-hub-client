@@ -9,8 +9,11 @@ const useAdmin = () => {
         queryKey: ['isAdmin'],
         enabled:!loading,
         queryFn: async() => {
-            const res = await axiosSecured(`/user/admin?email=${user?.email}`);
-            return res.data;
+            if(user?.email){
+                const res = await axiosSecured(`/user/admin?email=${user?.email}`);
+                return res?.data;
+            }
+            return false
         }
     })
     return {isAdmin,refetch}

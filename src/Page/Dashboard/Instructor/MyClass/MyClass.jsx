@@ -1,27 +1,28 @@
-import React from "react";
-import EnrolledClassRow from "./EnrolledClassRow";
-import Title from "../../../../Components/Title";
 import { useQuery } from "@tanstack/react-query";
-import useAuthContext from "../../../../Hooks/UseAuthContext";
+import React from "react";
 import useAxiosSecured from "../../../../Hooks/useAxiosSecured";
+import useAuthContext from "../../../../Hooks/UseAuthContext";
+import Title from "../../../../Components/Title";
+import MyClassRow from "./MyClassRow";
 
-const MyEnrolledClass = () => {
-    const { loading } = useAuthContext();
+const MyClass = () => {
+    const { user, loading } = useAuthContext();
     const { axiosSecured } = useAxiosSecured();
-    const { data: classes } = useQuery({
-        queryKey: ["selected"],
+    const { data: myClasses } = useQuery({
+        queryKey: ["myClass"],
         enabled: !loading,
         queryFn: async () => {
-            const res = await axiosSecured("/enrolledclass");
+            const res = await axiosSecured(`/myClasses?email=${user?.email}`);
             return res?.data;
         },
     });
+    console.log(myClasses);
     return (
-        <div className="w-11/12">
+        <div className="mx-5">
             <div className="mb-14">
                 <Title heading={"My Enrolled Class"}></Title>
             </div>
-            {classes?.length > 0 ? (
+            {myClasses?.length > 0 ? (
                 <>
                     <div className="overflow-x-auto">
                         <table className="table text-base">
@@ -30,18 +31,18 @@ const MyEnrolledClass = () => {
                                     <th>#</th>
                                     <th>Image</th>
                                     <th>Class Name</th>
-                                    <th>Instructor</th>
-                                    <th>Price</th>
+                                    <th>Enrolled</th>
                                     <th>Status</th>
+                                    <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                {classes?.map((item, idx) => (
-                                    <EnrolledClassRow
+                                {myClasses?.map((item, idx) => (
+                                    <MyClassRow
                                         item={item}
                                         idx={idx}
                                         key={item?._id}
-                                    ></EnrolledClassRow>
+                                    ></MyClassRow>
                                 ))}
                             </tbody>
                         </table>
@@ -50,7 +51,7 @@ const MyEnrolledClass = () => {
             ) : (
                 <>
                     <h2 className="text-center text-6xl text-main opacity-50 mt-20">
-                        No Class Enrolled
+                        No Class Added
                     </h2>
                 </>
             )}
@@ -58,4 +59,4 @@ const MyEnrolledClass = () => {
     );
 };
 
-export default MyEnrolledClass;
+export default MyClass;

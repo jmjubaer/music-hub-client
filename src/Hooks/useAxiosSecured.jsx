@@ -22,7 +22,7 @@ const useAxiosSecured = () => {
                 if (error.response && (error.response.status === 401 || error.response.status === 403)) {
                     // await logout();
                     // navigate('/login')
-                    console.log(error.response);
+                    console.log(error?.response);
                 }
             }
         )

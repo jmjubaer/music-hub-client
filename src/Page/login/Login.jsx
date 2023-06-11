@@ -15,7 +15,6 @@ const Login = () => {
     const {signIn} =  useAuthContext()
     const [show,setShow] = useState(false);
     const handleSignIn = (data) => {
-        console.log(data);
         signIn(data?.email, data?.password)
         .then(result => {
             const user = result.user;
