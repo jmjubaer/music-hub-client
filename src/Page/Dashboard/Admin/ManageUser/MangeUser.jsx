@@ -28,6 +28,7 @@ const MangeUser = () => {
                             <th>Image</th>
                             <th>Name</th>
                             <th>Email</th>
+                            <th>Role</th>
                             <th>Action</th>
                             <th>Action</th>
                         </tr>
@@ -36,6 +37,7 @@ const MangeUser = () => {
                         {user?.map((item, idx) => (
                                     <UserRow
                                         item={item}
+                                        refetch={refetch}
                                         idx={idx}
                                         key={item?._id}
                                     ></UserRow>

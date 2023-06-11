@@ -17,7 +17,7 @@ const SocialLogin = () => {
                     image: user?.photoURL,
                     name: user?.displayName,
                     email: user?.email,
-                    roll: "student"
+                    role: "student"
                 }
                 axios.post('http://localhost:5000/user',newUser)
                 .then(res => {

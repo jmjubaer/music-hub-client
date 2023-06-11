@@ -56,7 +56,7 @@ const Register = () => {
                             image: imgRes?.data?.display_url,
                             name: data?.name,
                             email: data?.email,
-                            roll: "user"
+                            role: "student"
                         }
                         axios.post('http://localhost:5000/user',newUser)
                         .then(res => {
