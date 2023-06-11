@@ -3,7 +3,7 @@ import Swal from 'sweetalert2';
 import useAxiosSecured from '../../../../Hooks/useAxiosSecured';
 import { FaTimes } from "react-icons/fa";
 // todo: approve and deniy fn 
-const Row = ({idx,item,refetch}) => {
+const Row = ({idx,item,refetch,setOpen,setId}) => {
   const {axiosSecured} = useAxiosSecured();
   const [feedback,setFeedback] = useState('')
   const [itemId,setItemId] = useState("");
@@ -37,21 +37,10 @@ const Row = ({idx,item,refetch}) => {
       }
     }
 
-    console.log(itemId);
-    const handleFeedback = async(id) => {
-      // const res = await axiosSecured.put(`/feedback/${item?._id}`,{feedback})
-      // if(res.data.modifiedCount > 0 ){
-      //   setFeedback('');
-      //   Swal.fire({
-      //     position: 'top-end',
-      //     icon: 'success',
-      //     title: 'Feedback sent successful',
-      //     showConfirmButton: false,
-      //     timer: 1500
-      //   })
-      // }
+    const handleConditions = () => {
+      setOpen(true)
+      setId(_id)
     }
-    
     return (
       <> 
           {/* Table row  */}
@@ -72,17 +61,7 @@ const Row = ({idx,item,refetch}) => {
                 <button onClick={handleDenied} disabled={status === "approved" || status === "denied"} className='btn btn-error'>denied</button>
             </td>
             <td>
-                <div className="modal" id="my_modal_8">
-                  <div className="modal-box relative">
-                    <h3 className="font-bold text-lg">Feedback!</h3>
-                    <form action="">
-                      <input value={feedback} onChange={(e) => setFeedback(e.target.value)} className='jm_input' type="text" name="feedback" id="" />
-                    </form>
-                      <a onClick={() =>handleFeedback(_id)} href="#" className="btn">Send</a>
-                      <a href="#" className="text-main text-2xl p-3 absolute top-0 right-0"><FaTimes/></a>
-                    </div>
-                </div>
-                <a onClick={() => setItemId(_id)} href="#my_modal_8"  className='btn btn-error'>feedback</a>
+                <button onClick={handleConditions} className='btn btn-error'>feedback</button>
             </td>
         </tr>
       </>

@@ -57,7 +57,7 @@ const Footer = () => {
                         </li>
                         <li>
                             <Link
-                                to="/blogs"
+                                to="/instructors"
                                 className="hover:text-amber-600 block my-2"
                             >
                                 Instructors 
@@ -65,7 +65,7 @@ const Footer = () => {
                         </li>
                         <li>
                             <Link
-                                to="/favorites"
+                                to="/classes"
                                 className="hover:text-amber-600 block my-2"
                             >
                                 Classes

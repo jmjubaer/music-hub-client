@@ -14,7 +14,7 @@ const useIsInstructor = () => {
                 const res = await axiosSecured(`/user/instructor/${user?.email}`);
                 return res?.data;
             }
-            return "falsy"
+            return false
         }
     })
     return {isInstructor,refetch}
