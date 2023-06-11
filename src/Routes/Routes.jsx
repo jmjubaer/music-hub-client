@@ -13,6 +13,7 @@ import MyEnrolledClass from "../Page/Dashboard/UserDashboard/MyEnrolledClass/MyE
 import PrivateRoute from "./PrivateRoute";
 import ManageClass from "../Page/Dashboard/Admin/ManageClass/ManageClass";
 import MangeUser from "../Page/Dashboard/Admin/ManageUser/MangeUser";
+import AdminRoute from "./AdminRoute";
 
 const routes = createBrowserRouter([
     {
@@ -60,11 +61,11 @@ const routes = createBrowserRouter([
             },
             {
                 path: 'manageclass',
-                element: <ManageClass/>
+                element: <AdminRoute><ManageClass/></AdminRoute>
             },
             {
                 path: 'manageuser',
-                element: <MangeUser/>
+                element: <AdminRoute><MangeUser/></AdminRoute>
             }
         ]
     }

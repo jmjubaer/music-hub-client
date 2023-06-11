@@ -2,9 +2,10 @@ import React from "react";
 import { FaBars, FaBookOpen, FaCalendarAlt, FaCalendarCheck, FaCalendarPlus, FaHome, FaUser, FaUsers, FaUsersCog } from "react-icons/fa";
 import Logo from "../Page/Shered Page/Logo";
 import { Link, NavLink, Outlet } from "react-router-dom";
+import useAdmin from "../Hooks/useAdmin";
 
 const Dashboard = () => {
-    const isAdmin = true;
+    const {isAdmin} = useAdmin();
     const isInstructor = false;
     return (
         <div className="drawer lg:drawer-open">
