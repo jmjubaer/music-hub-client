@@ -35,7 +35,7 @@ const Dashboard = () => {
                                 <FaUsersCog/>Manage  Classes</NavLink>
                         </li>
                         <li>
-                            <NavLink className={({ isActive }) => isActive ? "text-[#C3345F] bg-white": ""} to={'/dashboard/enrolledclass'}>
+                            <NavLink className={({ isActive }) => isActive ? "text-[#C3345F] bg-white": ""} to={'/dashboard/manageuser'}>
                                 <FaUsers/>Manage Users</NavLink>
                         </li>
                         

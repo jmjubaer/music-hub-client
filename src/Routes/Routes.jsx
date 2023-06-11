@@ -12,6 +12,7 @@ import MySelectedClass from "../Page/Dashboard/UserDashboard/MySlectedClass/MySe
 import MyEnrolledClass from "../Page/Dashboard/UserDashboard/MyEnrolledClass/MyEnrolledClass";
 import PrivateRoute from "./PrivateRoute";
 import ManageClass from "../Page/Dashboard/Admin/ManageClass/ManageClass";
+import MangeUser from "../Page/Dashboard/Admin/ManageUser/MangeUser";
 
 const routes = createBrowserRouter([
     {
@@ -60,6 +61,10 @@ const routes = createBrowserRouter([
             {
                 path: 'manageclass',
                 element: <ManageClass/>
+            },
+            {
+                path: 'manageuser',
+                element: <MangeUser/>
             }
         ]
     }

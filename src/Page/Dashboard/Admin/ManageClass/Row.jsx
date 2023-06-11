@@ -2,13 +2,13 @@ import React, { useState } from 'react';
 import Swal from 'sweetalert2';
 import useAxiosSecured from '../../../../Hooks/useAxiosSecured';
 import { FaTimes } from "react-icons/fa";
-
+// todo: approve and deniy fn 
 const Row = ({idx,item}) => {
   const {axiosSecured} = useAxiosSecured();
   const [feedback,setFeedback] = useState('')
-    const {className,email,image,price,totalSeats,status,instructor,_id} = item || {};
-    const handleFeedback = async() => {
-      const res = await axiosSecured.put(`/feedback/${_id}`,{feedback})
+    const {className,email,image,price,totalSeats,status,instructor} = item || {};
+    const handleFeedback = async(id) => {
+      const res = await axiosSecured.put(`/feedback/${item?._id}`,{feedback})
       if(res.data.modifiedCount > 0 ){
         setFeedback('');
         Swal.fire({
@@ -28,7 +28,7 @@ const Row = ({idx,item}) => {
               <form action="">
                 <input value={feedback} onChange={(e) => setFeedback(e.target.value)} className='jm_input' type="text" name="feedback" id="" />
               </form>
-                <a onClick={handleFeedback} href="#" className="btn">Yay!</a>
+                <a onClick={handleFeedback} href="#" className="btn">Send</a>
                 <a href="#" className="text-main text-2xl p-3 absolute top-0 right-0"><FaTimes/></a>
               </div>
           </div>

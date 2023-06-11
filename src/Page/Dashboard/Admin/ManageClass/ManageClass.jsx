@@ -13,7 +13,7 @@ const ManageClass = () => {
         enabled: !loading,
         queryFn: async () => {
             const res = await axiosSecured(`/allclasses?email=${user?.email}`);
-            return res.data;
+            return res?.data;
         },
     });
     return (
