@@ -22,6 +22,7 @@ const MyClass = () => {
             <div className="mb-14">
                 <Title heading={"My Enrolled Class"}></Title>
             </div>
+            <h2 className="text-4xl font-semibold my-3">Total Class: {myClasses?.length}</h2>
             {myClasses?.length > 0 ? (
                 <>
                     <div className="overflow-x-auto">

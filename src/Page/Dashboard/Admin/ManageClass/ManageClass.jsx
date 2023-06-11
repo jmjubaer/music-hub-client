@@ -17,7 +17,7 @@ const ManageClass = () => {
         },
     });
     return (
-        <div className="w-11/12 my-10">
+        <div className="mx-5 my-10">
             <Title heading={"Mange class"}></Title>
             <div className="overflow-auto h-[80vh] mt-16">
                 <table className="table text-base">

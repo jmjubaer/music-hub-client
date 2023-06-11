@@ -18,6 +18,9 @@
 
   .jm_input{
     @apply w-full py-3 px-5 my-3 rounded-3xl bg-[#ff9aa6] bg-opacity-50  placeholder:text-[#fff]
+  } 
+  .jm_input_white{
+    @apply text-main w-full py-3 px-5 my-3 rounded-3xl bg-[#fff] bg-opacity-80  placeholder:text-main
   }
 .jm_btn{
   @apply bg-gradient-to-r from-main to-secondery text-xl uppercase text-white py-4 px-8 mt-5 cursor-pointer

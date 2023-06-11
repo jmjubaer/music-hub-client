@@ -51,6 +51,7 @@ const Row = ({idx,item,refetch}) => {
       //   })
       // }
     }
+    
     return (
       <> 
           {/* Table row  */}
@@ -65,10 +66,10 @@ const Row = ({idx,item,refetch}) => {
             <td>{totalSeats}</td>
             <td>${price}</td>
             <td>
-                <button onClick={handleApproved} disabled={status === "approved"} className='btn btn-success'>approve</button>
+                <button onClick={handleApproved} disabled={status === "approved" || status === "denied"} className='btn btn-success'>approve</button>
             </td>
             <td>
-                <button onClick={handleDenied} disabled={status === "approved"} className='btn btn-error'>denied</button>
+                <button onClick={handleDenied} disabled={status === "approved" || status === "denied"} className='btn btn-error'>denied</button>
             </td>
             <td>
                 <div className="modal" id="my_modal_8">
