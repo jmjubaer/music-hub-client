@@ -5,7 +5,6 @@ import Loader from '../Page/Shered Page/Loader';
 import useAdmin from '../Hooks/useAdmin';
 
 const AdminRoute = ({children}) => {
-    const location = useLocation();
     const { isAdmin } = useAdmin();
     const {user,loading} = useAuthContext();
     if(loading){
