@@ -5,7 +5,7 @@ import Swal from "sweetalert2";
 // TODO: Paymen method setup
 const ClassRow = ({item,idx,refetch}) => {
     const {axiosSecured} = useAxiosSecured();
-    const {className,image,instructor,price,_id} = item || {};
+    const {className,image,instructor,productId,price,_id} = item || {};
     const handleDelete =() => {
         Swal.fire({
             title: 'Are you sure?',
@@ -32,6 +32,22 @@ const ClassRow = ({item,idx,refetch}) => {
             }
           })
     }
+    const handlePayment = async() => {
+        const res = await axiosSecured.put(`/enrolled/${_id}`)
+        console.log(res.data);
+        if(res?.data?.modifiedCount > 0){
+            const res = await axiosSecured.get(`/confirmEnrolled/${productId}`)
+            Swal.fire({
+                position: 'top-end',
+                icon: 'success',
+                title: 'Payment successful',
+                showConfirmButton: false,
+                timer: 1500
+              })
+            console.log(res?.data);
+            refetch()
+        }
+    }
     return (
         <tr>
             <th>{idx + 1}</th>
@@ -53,7 +69,7 @@ const ClassRow = ({item,idx,refetch}) => {
             <td>{instructor}</td>
             <td>${price}</td>
             <th>
-                <button className="btn btn-info">Pay</button>
+                <button onClick={handlePayment} className="btn btn-info">Pay</button>
             </th>
             <th>
                 <button onClick={handleDelete} className="btn btn-error text-white"><FaTrashAlt/></button>

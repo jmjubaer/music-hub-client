@@ -40,7 +40,8 @@ const ManageClass = () => {
     return (
         <div className="mx-5 my-10">
             <Title heading={"Mange class"}></Title>
-            <div className="overflow-auto h-[80vh] mt-16">
+            <h2 className='text-3xl font-medium mb-3 mt-10'>Total Class: {allclasses?.length}</h2>
+            <div className="overflow-auto h-[75vh]">
                 <div className={`w-full h-screen flex justify-center items-center bg-main fixed top-0 left-0 z-50 bg-opacity-50 ${open ? "" : "hidden"}`}>
                     <div className="w-1/2 h-60 relative rounded-lg bg-white">
                         <h2 className="text-4xl ml-4 mt-5">Feedback</h2>

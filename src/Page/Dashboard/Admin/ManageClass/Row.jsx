@@ -2,11 +2,8 @@ import React, { useState } from 'react';
 import Swal from 'sweetalert2';
 import useAxiosSecured from '../../../../Hooks/useAxiosSecured';
 import { FaTimes } from "react-icons/fa";
-// todo: approve and deniy fn 
 const Row = ({idx,item,refetch,setOpen,setId}) => {
   const {axiosSecured} = useAxiosSecured();
-  const [feedback,setFeedback] = useState('')
-  const [itemId,setItemId] = useState("");
     const {className,email,image,price,totalSeats,status,instructor,_id} = item || {};
 
     const handleApproved = async() => {

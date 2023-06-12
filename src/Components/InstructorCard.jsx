@@ -23,7 +23,9 @@ const InstructorCard = ({instructors,classes}) => {
                     <p className='text-lg font-bold'>Class Name:</p>
                     <div className='text-lg mt-3'>
                         {
-                            instructorsClasses?.map((item,idx) => <li key={idx}>{item?.className}</li>)
+                            instructorsClasses?.length > 0 ? 
+                            instructorsClasses?.map((item,idx) => <li key={idx}>{item?.className}</li>) :
+                            <p>No Class added</p>
                         }
                     </div>
                 </div>

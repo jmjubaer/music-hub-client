@@ -17,10 +17,11 @@ const MySelectedClass = () => {
         },
     });
     return (
-        <div className="w-11/12">
+        <div className=" mx-5">
             <div className="mb-14">
                 <Title heading={"My Selected Class"}></Title>
             </div>
+            <h2 className="text-4xl my-4">Total Selected: {classes?.length}</h2>
             {classes?.length > 0 ? (
                 <>
                     <div className="overflow-x-auto">

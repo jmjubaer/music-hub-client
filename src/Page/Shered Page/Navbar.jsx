@@ -30,7 +30,7 @@ const Navbar = () => {
                             <NavLink
                                 to="/"
                                 className={({ isActive }) =>
-                                    isActive ? "text-[#C3345F]" : ""
+                                    isActive ? "text-[#FC5640]" : ""
                                 }
                             >
                                 Home
@@ -39,7 +39,7 @@ const Navbar = () => {
                         <li>
                             <NavLink
                                 className={({ isActive }) =>
-                                    isActive ? "text-[#C3345F]" : ""
+                                    isActive ? "text-[#FC5640]" : ""
                                 }
                                 to="/instructors"
                             >
@@ -49,7 +49,7 @@ const Navbar = () => {
                         <li>
                             <NavLink
                                 className={({ isActive }) =>
-                                    isActive ? "text-[#C3345F]" : ""
+                                    isActive ? "text-[#FC5640]" : ""
                                 }
                                 to="/classes"
                             >
@@ -60,7 +60,7 @@ const Navbar = () => {
                             user && <li>
                             <NavLink
                                 className={({ isActive }) =>
-                                    isActive ? "text-[#C3345F]" : ""
+                                    isActive ? "text-[#FC5640]" : ""
                                 }
                                 to={isAdmin ? "/dashboard/manageclass" 
                                 :(isInstructor) ? 

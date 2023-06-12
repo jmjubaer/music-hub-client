@@ -136,6 +136,7 @@ const Register = () => {
                     <input
                         className="jm_input"
                         type="file"
+                        required
                         {...register("image")}
                     />
 

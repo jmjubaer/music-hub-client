@@ -3,6 +3,9 @@
   max-width: 96%;
   margin:  0 auto;
 }
+html{
+  scroll-behavior: smooth;
+}
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -53,4 +56,16 @@
 }
 .menu li a{
   @apply my-2
+}
+.Jm_modal{
+  @apply w-full h-screen flex justify-center items-center bg-main fixed top-0 left-0 z-50 bg-opacity-50
+}
+.progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 10px;
+  background: var(--red);
+  transform-origin: 0%;
 }

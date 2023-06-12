@@ -5,13 +5,22 @@ import useAuthContext from "../Hooks/UseAuthContext";
 import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import useAdmin from "../Hooks/useAdmin";
+import useIsInstructor from "../Hooks/useIsInstructor";
+import useAxiosSecured from "../Hooks/useAxiosSecured";
 const ClassCard = ({ data }) => {
+    const { isAdmin } = useAdmin();
+    const { isInstructor } = useIsInstructor();
+    const {axiosSecured} = useAxiosSecured();
     const navigate = useNavigate();
     const { user } = useAuthContext();
-    const { className, enrolled, image, instructor, price, totalSeats, _id } =
-        data || {};
-    const available = totalSeats - enrolled;
-    // TODO : change design and select btn
+    const { className, enrolled, image, instructor, price, totalSeats, _id } = data || {};
+    let available = 0;
+    if(enrolled){
+         available = totalSeats - enrolled;
+    }else{
+        available = totalSeats;
+    }
     const handleSelect = () => {
         if (!user) {
             Swal.fire({
@@ -37,8 +46,7 @@ const ClassCard = ({ data }) => {
                 email: user?.email,
                 status: "pending",
             };
-            axios
-                .post("http://localhost:5000/enrolled", ClassInfo)
+            axiosSecured.post("http://localhost:5000/selected", ClassInfo)
                 .then((response) => {
                     console.log(response.data);
                     if (response?.data?.insertedId) {
@@ -76,7 +84,7 @@ const ClassCard = ({ data }) => {
             <figure>
                 <img
                     src={image}
-                    className="h-60 w-full border border-main rounded-b-full"
+                    className="h-60 w-full border object-cover border-main rounded-b-full"
                     alt="Shoes"
                 />
             </figure>
@@ -111,7 +119,7 @@ const ClassCard = ({ data }) => {
                     {instructor}
                 </p>
                 <button
-                    disabled={available === 0}
+                    disabled={available === 0 || isAdmin || isInstructor}
                     onClick={handleSelect}
                     className="jm_btn-tiny absolute top-0 right-0 text-lg btn_disabled"
                 >

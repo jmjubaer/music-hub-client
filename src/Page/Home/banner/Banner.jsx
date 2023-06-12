@@ -9,6 +9,8 @@ import image1  from '../../../assets/banner/1.jpg'
 import image2  from '../../../assets/banner/2.jpg'
 import image3  from '../../../assets/banner/3.jpg'
 import useAuthContext from '../../../Hooks/UseAuthContext';
+import { Fade, Slide } from "react-awesome-reveal";
+
 const Banner = () => {
     const {theme} = useAuthContext();
     const progressCircle = useRef(null);
@@ -22,7 +24,7 @@ const Banner = () => {
         spaceBetween={30}
         centeredSlides={true}
         autoplay={{
-          delay: 2500,
+          delay: 5000,
           disableOnInteraction: false,
         }}
         pagination={{
@@ -34,14 +36,20 @@ const Banner = () => {
         className="mySwiper"
       >
         <SwiperSlide>
-        <div className={`h-[120vh] ${theme === "dark" && "dark"}`}>
-              <img src={image1} alt="" />
-              <div className="slider_overlay">
-                  <div className="w-2/3 absolute left-20 top-1/2 -translate-y-1/2">
-                      <h2 className='text-5xl leading-tight'>Embark on a Melodic Journey at Music Hub.</h2>
+        <div className={`h-[120vh] overflow-hidden ${theme === "dark" && "dark"}`}>
+              <img className='' src={image1} alt="" />
+              <div className="slider_overlay overflow-hidden">
+                  <div className="w-2/3 over absolute left-20 top-1/2 -translate-y-1/2">
+                  <Slide>
+                      WELL COME IN MUSIC HUB
+                  </Slide>
+                    <Fade className='text-5xl leading-tight' delay={1e2} cascade damping={1e-1}>
+                    Embark on a Melodic Journey at Music Hub.
+                    </Fade>
+                        <h2 className=''></h2>
                       <p className='mt-8'>Welcome to Music Hub, the premier destination for aspiring musicians of all ages and skill levels. Discover a world of melody, rhythm, and harmony as you embark on a musical journey like no other. Whether you're a beginner eager to learn the basics or a seasoned performer looking to refine your craft.</p>
                       <div className="flex gap-5 mt-5">
-                        <button className='jm_btn border-2 rounded-lg'>Discover</button>
+                        <a href='#class' className='jm_btn border-2 rounded-lg'>Discover</a>
                         <button className='jm_btn_outline'>Contact us</button>
                       </div>
                   </div>
@@ -49,14 +57,19 @@ const Banner = () => {
           </div>
         </SwiperSlide>
         <SwiperSlide>
-          <div className={`h-[120vh] ${theme === "dark" && "dark"}`}>
+          <div className={`h-[120vh] overflow-hidden ${theme === "dark" && "dark"}`}>
               <img src={image2} alt="" />
-              <div className="slider_overlay">
+              <div className="slider_overlay overflow-hidden">
                   <div className="w-2/3 absolute left-20 top-1/2 -translate-y-1/2">
-                      <h2 className='text-5xl leading-tight'>Embark on a Melodic Journey at Music Hub.</h2>
-                      <p className='mt-8'>Join us at Music Hub, and let the power of music ignite your passion and unlock your true potential. Explore the magic of melodies, the joy of harmonies, and the thrill of performing. Enroll today and embark on a transformative musical adventure that will last a lifetime. Your journey starts here at Music Hub</p>
+                  <Slide>
+                      WELL COME IN MUSIC HUB
+                  </Slide>
+                    <Fade className='text-5xl leading-tight' delay={1e2} cascade damping={1e-1}>
+                    Join the Musical Revolution at Music Hub
+                    </Fade>
+                      <p className='mt-8'>Immerse yourself in a vibrant community of fellow music enthusiasts, where creativity flourishes and lifelong friendships are forged. From classical compositions to contemporary hits, our diverse curriculum covers a myriad of genres, ensuring a well-rounded education in music theory, instrument mastery, vocal technique, and performance skills.</p>
                       <div className="flex gap-8 mt-5">
-                        <button className='jm_btn border-2 rounded-lg'>Discover</button>
+                        <a href='#class' className='jm_btn border-2 rounded-lg'>Discover</a>
                         <button className='jm_btn_outline'>Contact us</button>
                       </div>
                   </div>
@@ -64,14 +77,19 @@ const Banner = () => {
           </div>
         </SwiperSlide>
         <SwiperSlide>
-        <div className={`h-[120vh] ${theme === "dark" && "dark"}`}>
+        <div className={`h-[120vh] overflow-hidden ${theme === "dark" && "dark"}`}>
               <img src={image3} alt="" />
-              <div className="slider_overlay">
+              <div className="slider_overlay overflow-hidden">
                   <div className="w-2/3 absolute left-20 top-1/2 -translate-y-1/2">
-                      <h2 className='text-5xl leading-tight'>Embark on a Melodic Journey at Music Hub.</h2>
-                      <p className='mt-8'>Join us at Music Hub, and let the power of music ignite your passion and unlock your true potential. Explore the magic of melodies, the joy of harmonies, and the thrill of performing. Enroll today and embark on a transformative musical adventure that will last a lifetime. Your journey starts here at Music Hub!</p>
+                    <Slide>
+                        WELL COME IN MUSIC HUB
+                    </Slide>
+                    <Fade className='text-5xl leading-tight' delay={1e2} cascade damping={1e-1}>
+                    Unlock Your Musical Potential at Music Hub
+                    </Fade>
+                      <p className='mt-8'>At Music Hub, we believe in fostering a nurturing and supportive environment that encourages self-expression and fosters a love for music. Our state-of-the-art facilities and cutting-edge technology provide the perfect backdrop for immersive learning experiences. </p>
                       <div className="flex gap-8 mt-8">
-                        <button className='jm_btn border-2 rounded-lg'>Discover</button>
+                        <a href='#class' className='jm_btn border-2 rounded-lg'>Discover</a>
                         <button className='jm_btn_outline'>Contact us</button>
                       </div>
                   </div>

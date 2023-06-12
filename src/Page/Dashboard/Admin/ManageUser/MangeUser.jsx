@@ -16,11 +16,11 @@ const MangeUser = () => {
             return res?.data;
         }
     })
-    console.log(user);
     return (
-        <div className="w-11/12 my-10">
+        <div className="mx-5 my-10">
             <Title heading={"Mange User"}></Title>
-            <div className="overflow-auto h-[80vh] mt-16">
+            <h2 className='text-3xl font-medium mb-3 mt-10'>Total User: {user?.length}</h2>
+            <div className="overflow-auto h-[80vh]">
                 <table className="table text-base">
                     <thead className="bg-main bg-opacity-90 text-base">
                         <tr>
