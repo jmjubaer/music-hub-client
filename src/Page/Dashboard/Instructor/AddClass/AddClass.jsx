@@ -50,7 +50,7 @@ const AddClass = () => {
                 <div className="w-full">
                     <input required className='jm_input_white' placeholder='Class Name' type="text" id='name' {...register("className")}/>
                 </div>
-                <div className="flex gap-8 mt-5">
+                <div className="flex flex-wrap md:flex-nowrap gap-8 mt-5">
                     <div className="w-full">
                         <label className='text-xl' htmlFor="ins">Name</label>
                         <input required value={user?.displayName} id='ins' readOnly className='jm_input_white cursor-not-allowed' type="text" {...register("instructor")}/>
@@ -60,7 +60,7 @@ const AddClass = () => {
                         <input required value={user?.email} readOnly className='cursor-not-allowed jm_input_white' type="email" id='email' {...register("email")}/>
                     </div>
                 </div>
-                <div className="flex gap-8 mt-5">
+                <div className="flex flex-wrap md:flex-nowrap gap-8 mt-5">
                     <div className="w-full">
                         <label htmlFor="seats" className='text-xl'>Total Seats</label>
                         <input required className='jm_input_white' placeholder='Total Seats' type="text" id='seats' {...register("totalSeats")}/>

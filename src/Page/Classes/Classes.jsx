@@ -10,7 +10,7 @@ const Classes = () => {
     return (
         <div className={`mb-20 ${theme === "dark" && "dark"}`}>
             <Cover title={'All Class'}></Cover>
-            <div className="grid grid-cols-3 gap-8 jm_container my-8">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 jm_container my-8">
                 {
                     classes?.map(item => <ClassCard 
                     key={item?._id}
