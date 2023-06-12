@@ -44,7 +44,6 @@ const Register = () => {
         })
             .then((res) => res.json())
             .then((imgRes) => {
-                console.log(imgRes);
                 if (imgRes.success) {
                     createUser(data?.email, data?.password)
                         .then((result) => {
@@ -66,7 +65,6 @@ const Register = () => {
                                         newUser
                                     )
                                     .then((res) => {
-                                        console.log(res.data);
                                         Swal.fire({
                                             icon: "success",
                                             title: "User created successful",
@@ -79,7 +77,6 @@ const Register = () => {
                             }
                         })
                         .catch((err) => {
-                            console.log(err);
                             Swal.fire({
                                 icon: "error",
                                 title: "Oops...",

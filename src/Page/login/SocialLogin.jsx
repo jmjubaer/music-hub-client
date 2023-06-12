@@ -25,7 +25,6 @@ const SocialLogin = () => {
                             newUser
                         )
                         .then((res) => {
-                            console.log(res.data);
                             Swal.fire({
                                 icon: "success",
                                 title: "User created successful",
@@ -36,10 +35,8 @@ const SocialLogin = () => {
                         });
                 }
 
-                // console.log(newUser);
             })
             .catch((err) => {
-                console.log(err);
                 Swal.fire({
                     icon: "error",
                     title: "Oops...",
@@ -60,7 +57,6 @@ const SocialLogin = () => {
                 navigate("/");
             })
             .catch((err) => {
-                console.log(err);
                 Swal.fire({
                     icon: "error",
                     title: "Oops...",

@@ -13,7 +13,6 @@ const Navbar = () => {
     const [control, setControl] = useState(false);
     const {isAdmin} = useAdmin();
     const {isInstructor} = useIsInstructor();
-    console.log(isInstructor);
     return (
         <div className="bg-main jm_container_lg z-50 bg-opacity-50 px-5 py-3 text-white">
             <nav className="flex lg:grid lg:grid-cols-5 justify-between items-center">

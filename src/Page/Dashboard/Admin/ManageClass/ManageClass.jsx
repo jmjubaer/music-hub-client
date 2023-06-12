@@ -24,7 +24,6 @@ const ManageClass = () => {
         event.preventDefault()
         const feedback = event.target.feedback.value;
         const res = await axiosSecured.put(`/feedback/${id}`,{feedback})
-        console.log(res.data);
         if(res.data.modifiedCount > 0 ){
             event.target.reset();
             setOpen(false)

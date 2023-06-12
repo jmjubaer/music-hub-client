@@ -36,7 +36,6 @@ const ClassRow = ({item,idx,refetch}) => {
     }
     const handlePayment = async() => {
         const res = await axiosSecured.put(`/enrolled/${_id}`)
-        console.log(res.data);
         if(res?.data?.modifiedCount > 0){
             const res = await axiosSecured.get(`/confirmEnrolled/${productId}`)
             Swal.fire({
@@ -46,7 +45,6 @@ const ClassRow = ({item,idx,refetch}) => {
                 showConfirmButton: false,
                 timer: 1500
               })
-            console.log(res?.data);
             refetch()
         }
     }

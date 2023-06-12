@@ -29,7 +29,6 @@ const AddClass = () => {
                     totalSeats: parseInt(data?.totalSeats),
                     price: parseInt(data?.price),
                 }
-                console.log(newClass);
                const res = await axiosSecured.post('addClass',newClass)
                if(res?.data?.insertedId){
                 reset();

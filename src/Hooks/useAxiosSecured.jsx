@@ -27,7 +27,6 @@ const useAxiosSecured = () => {
                 ) {
                     // await logout();
                     // navigate('/login')
-                    console.log(error?.response);
                 }
             }
         );

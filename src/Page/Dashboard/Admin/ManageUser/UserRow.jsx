@@ -6,7 +6,6 @@ const UserRow = ({item,idx,refetch}) => {
     const {name,email,role,image,_id} = item || {};
     const {axiosSecured} = useAxiosSecured();
     const makeAdmin = async() => {
-        console.log(_id);
         Swal.fire({
             title: 'Are you sure?',
             text: "Make the user Admin!",
@@ -18,7 +17,6 @@ const UserRow = ({item,idx,refetch}) => {
           }).then(async(result) => {
             if (result.isConfirmed) {
                 const res = await axiosSecured.put(`/makeAdmin/${_id}`)
-                console.log(res);
                 if(res.data.modifiedCount > 0){
                     refetch();
                     Swal.fire(
@@ -42,7 +40,6 @@ const UserRow = ({item,idx,refetch}) => {
           }).then(async(result) => {
             if (result.isConfirmed) {
                 const res = await axiosSecured.put(`/makeInstructor/${_id}`)
-                console.log(res);
                 if(res.data.modifiedCount > 0){
                     refetch();
                     Swal.fire(

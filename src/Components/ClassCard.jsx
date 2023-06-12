@@ -53,7 +53,6 @@ const ClassCard = ({ data }) => {
                     ClassInfo
                 )
                 .then((response) => {
-                    console.log(response.data);
                     if (response?.data?.insertedId) {
                         Swal.fire({
                             icon: "success",
