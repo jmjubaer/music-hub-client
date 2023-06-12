@@ -15,7 +15,7 @@ const Navbar = () => {
     const {isInstructor} = useIsInstructor();
     console.log(isInstructor);
     return (
-        <div className="bg-main z-50 bg-opacity-50 px-5 py-3 text-white">
+        <div className="bg-main jm_container_lg z-50 bg-opacity-50 px-5 py-3 text-white">
             <nav className="flex lg:grid lg:grid-cols-5 justify-between items-center">
                 <div className="lg:col-span-2 flex gap-2">
                     <Logo></Logo>
@@ -72,7 +72,7 @@ const Navbar = () => {
                         </li>
                         }
                     </ul>
-                    <div className="flex items-center gap-5">
+                    <div className="flex-row-reverse flex lg:flex-row justify-end lg:mt-0 mt-5 items-center gap-5">
                         <Tooltip id="my-tooltip" />
                         <label onChange={toggleTheme} className="swap swap-rotate">
                             <input type="checkbox" />

@@ -13,7 +13,7 @@ const InstructorCard = ({instructors,classes}) => {
         })
     },[])
     return (
-        <div  data-aos="zoom-in" className="card border dark:text-slate-100 dark:bg-main dark:bg-opacity-50 rounded-none shadow-xl">
+        <div  data-aos="zoom-in" className="card border w-full max-w-[96%] mx-auto dark:text-slate-100 dark:bg-main dark:bg-opacity-50 rounded-none shadow-xl">
             <figure><img src={image} className='w-full h-80 object-cover' alt="Shoes" /></figure>
             <div className="p-5 text-center ">
                 <h2 className="text-2xl font-bold text-sky-600">{name}</h2>

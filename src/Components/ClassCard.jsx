@@ -79,7 +79,7 @@ const ClassCard = ({ data }) => {
     return (
         <div
             data-aos="zoom-in"
-            className="card text-gray-600 card-compact rounded-none border shadow-2xl relative dark:bg-main"
+            className="card max-w-[96%] mx-auto w-full text-gray-600 card-compact rounded-none border shadow-2xl relative dark:bg-main"
         >
             <figure>
                 <img

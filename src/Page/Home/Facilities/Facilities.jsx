@@ -20,23 +20,23 @@ const Facilities = () => {
     return (
         <div className='my-28 jm_container'>
             <Title heading={"Our Some Facilities"} subHeading={"Explore our facilities"}></Title>
-            <div className="grid grid-cols-2 gap-8 my-16">
+            <div className="grid lg:grid-cols-2 gap-8 my-16">
                 <div className="">
-                  <div  data-aos="zoom-in" className="flex items-center gap-5 jm_shadow p-5 rounded-lg">
+                  <div  data-aos="zoom-in" className="flex flex-col sm:flex-row items-center gap-5 jm_shadow p-5 rounded-lg">
                     <img src={image1} alt="" />
                     <div className="">
                         <h3 className='text-2xl font-semibold mb-4'>Multimedia Class</h3>
                         <p className='leading-relaxed'>we offer an online learning platform that allows students to access educational materials, practice exercises, and video tutorials.</p>
                     </div>
                   </div>
-                  <div data-aos="fade-up" className="flex items-center gap-5 jm_shadow p-5 rounded-lg my-8">
+                  <div data-aos="fade-up" className="flex flex-col sm:flex-row items-center gap-5 jm_shadow p-5 rounded-lg my-8">
                     <img src={image2} alt="" />
                     <div className="">
                         <h3 className='text-2xl font-semibold mb-4'>Experienced Instructors</h3>
                         <p className='leading-relaxed'>We pride ourselves on having a team of expert instructors who are passionate about music and dedicated to helping students achieve their goals.</p>
                     </div>
                   </div>
-                  <div data-aos="fade-up" className="flex items-center gap-5 jm_shadow p-5 rounded-lg">
+                  <div data-aos="fade-up" className="flex flex-col sm:flex-row items-center gap-5 jm_shadow p-5 rounded-lg">
                     <img src={image3} alt="" />
                     <div className="">
                         <h3 className='text-2xl font-semibold mb-4'>Instrument Rental Services</h3>
