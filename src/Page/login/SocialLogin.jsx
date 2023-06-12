@@ -20,7 +20,10 @@ const SocialLogin = () => {
                         role: "student",
                     };
                     axios
-                        .post("http://localhost:5000/user", newUser)
+                        .post(
+                            "https://summer-camp-server-fawn.vercel.app/user",
+                            newUser
+                        )
                         .then((res) => {
                             console.log(res.data);
                             Swal.fire({
@@ -66,7 +69,7 @@ const SocialLogin = () => {
             });
     };
     return (
-        <div className="flex gap-5">
+        <div className="flex flex-wrap sm:flex-nowrap gap-5">
             <button
                 onClick={handleGoogleLogin}
                 className="flex jm_btn rounded-md w-full items-center"

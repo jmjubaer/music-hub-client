@@ -61,7 +61,10 @@ const Register = () => {
                                     role: "student",
                                 };
                                 axios
-                                    .post("http://localhost:5000/user", newUser)
+                                    .post(
+                                        "https://summer-camp-server-fawn.vercel.app/user",
+                                        newUser
+                                    )
                                     .then((res) => {
                                         console.log(res.data);
                                         Swal.fire({

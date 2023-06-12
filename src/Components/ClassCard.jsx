@@ -11,14 +11,15 @@ import useAxiosSecured from "../Hooks/useAxiosSecured";
 const ClassCard = ({ data }) => {
     const { isAdmin } = useAdmin();
     const { isInstructor } = useIsInstructor();
-    const {axiosSecured} = useAxiosSecured();
+    const { axiosSecured } = useAxiosSecured();
     const navigate = useNavigate();
     const { user } = useAuthContext();
-    const { className, enrolled, image, instructor, price, totalSeats, _id } = data || {};
+    const { className, enrolled, image, instructor, price, totalSeats, _id } =
+        data || {};
     let available = 0;
-    if(enrolled){
-         available = totalSeats - enrolled;
-    }else{
+    if (enrolled) {
+        available = totalSeats - enrolled;
+    } else {
         available = totalSeats;
     }
     const handleSelect = () => {
@@ -46,7 +47,11 @@ const ClassCard = ({ data }) => {
                 email: user?.email,
                 status: "pending",
             };
-            axiosSecured.post("http://localhost:5000/selected", ClassInfo)
+            axiosSecured
+                .post(
+                    "https://summer-camp-server-fawn.vercel.app/selected",
+                    ClassInfo
+                )
                 .then((response) => {
                     console.log(response.data);
                     if (response?.data?.insertedId) {

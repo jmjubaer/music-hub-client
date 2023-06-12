@@ -61,13 +61,15 @@ const Banner = () => {
           <div className={`h-[100vh] max-h-[800px] overflow-hidden ${theme === "dark" && "dark"}`}>
               <img src={image2} alt="" />
               <div className="slider_overlay overflow-hidden">
-                  <div className="w-2/3 absolute left-20 top-1/2 -translate-y-1/2">
-                  <Slide className='hidden lg:block'>
-                      WELL COME IN MUSIC HUB
-                  </Slide>
-                    <Fade className='text-5xl hidden lg:block leading-tight' delay={1e2} cascade damping={1e-1}>
-                    Join the Musical Revolution at Music Hub
-                    </Fade>
+                  <div className="md:w-2/3 w-11/12 text-center md:text-left left-4 absolute md:left-20 top-1/2 -translate-y-1/2">
+                    <Slide className='hidden md:block'>
+                          WELL COME IN MUSIC HUB
+                      </Slide>
+                      <div className="hidden md:block">
+                        <Fade className='text-3xl lg:text-4xl leading-tight' delay={1e2} cascade damping={1e-1}>Join the Musical Revolution at Music Hub.
+                        </Fade>
+                      </div>
+                      <h2 className='leading-tight text-3xl md:hidden'>Join the Musical Revolution at Music Hub.</h2>
                       <p className='mt-8'>Immerse yourself in a vibrant community of fellow music enthusiasts, where creativity flourishes and lifelong friendships are forged. From classical compositions to contemporary hits, our diverse curriculum covers a myriad of genres, ensuring a well-rounded education in music theory, instrument mastery, vocal technique, and performance skills.</p>
                       <div className="flex gap-8 mt-5">
                         <a href='#class' className='jm_btn border-2 rounded-lg'>Discover</a>
@@ -81,13 +83,15 @@ const Banner = () => {
         <div className={`h-[100vh] max-h-[800px] overflow-hidden ${theme === "dark" && "dark"}`}>
               <img src={image3} alt="" />
               <div className="slider_overlay overflow-hidden">
-                  <div className="w-2/3 absolute left-20 top-1/2 -translate-y-1/2">
+                  <div className="md:w-2/3 w-11/12 text-center md:text-left left-4 absolute md:left-20 top-1/2 -translate-y-1/2">
                     <Slide className='hidden lg:block'>
                         WELL COME IN MUSIC HUB
                     </Slide>
-                    <Fade className='text-5xl hidden lg:block leading-tight w-[100px]' delay={1e2} cascade damping={1e-1}>
-                    Unlock Your Musical Potential at Music Hub
-                    </Fade>
+                    <div className="hidden md:block">
+                        <Fade className='text-3xl lg:text-4xl leading-tight' delay={1e2} cascade damping={1e-1}>Unlock Your Musical Potential at Music Hub.
+                        </Fade>
+                      </div>
+                      <h2 className='leading-tight text-3xl md:hidden'>Unlock Your Musical Potential at Music Hub.</h2>
                     <p className='mt-8'>At Music Hub, we believe in fostering a nurturing and supportive environment that encourages self-expression and fosters a love for music. Our state-of-the-art facilities and cutting-edge technology provide the perfect backdrop for immersive learning experiences. </p>
                       <div className="flex gap-8 mt-8">
                         <a href='#class' className='jm_btn border-2 rounded-lg'>Discover</a>

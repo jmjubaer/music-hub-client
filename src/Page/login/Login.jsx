@@ -39,7 +39,7 @@ const Login = () => {
 
   return (
     <div className="min-h-screen flex items-center justify-center">
-        <div className="w-2/5 rounded-lg p-10 my-20 bg-[#d2d2d2]  shadow-xl bg-opacity-30">
+        <div className="lg:w-2/5 sm:w-4/5 md:w-3/5 w-11/12 rounded-lg p-3 md:p-10 my-20 bg-[#d2d2d2]  shadow-xl bg-opacity-30">
             <h2 className="text-4xl font-bold text-center my-5">login</h2>
             <form onSubmit={handleSubmit(handleSignIn)}>
                 <input required className="jm_input" placeholder="Enter your Email" type="email" {...register("email")} />

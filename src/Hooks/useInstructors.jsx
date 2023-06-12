@@ -13,7 +13,9 @@ const useInstructors = () => {
         queryKey: ["instructor"],
         enabled: !loading,
         queryFn: async () => {
-            const res = await axios("http://localhost:5000/instructors");
+            const res = await axios(
+                "https://summer-camp-server-fawn.vercel.app/instructors"
+            );
             return res.data;
         },
     });

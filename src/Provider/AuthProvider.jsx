@@ -54,7 +54,7 @@ const AuthProvider = ({ children }) => {
             setUser(loggedUser);
             if (loggedUser) {
                 axios
-                    .post("http://localhost:5000/jwt", {
+                    .post("https://summer-camp-server-fawn.vercel.app/jwt", {
                         email: loggedUser.email,
                     })
                     .then((res) => {
