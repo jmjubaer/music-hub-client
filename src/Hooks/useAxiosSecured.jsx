@@ -10,12 +10,12 @@ const useAxiosSecured = () => {
     const {logout} = useAuthContext();
     const navigate = useNavigate();
     useEffect(()=> {
-        axiosSecured.interceptors.request.use((config) => {
+        axiosSecured.interceptors.request.use((request) => {
             const token = localStorage.getItem('music-hub-token');
             if (token) {
-                config.headers.Authorization = `Bearer ${token}`
+                request.headers.Authorization = `Bearer ${token}`
             }
-            return config;
+            return request;
         });
         axiosSecured.interceptors.response.use((response) => response,
             async(error) => {

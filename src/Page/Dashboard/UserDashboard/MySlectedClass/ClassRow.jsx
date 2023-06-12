@@ -1,7 +1,9 @@
 import React from "react";
-import { FaTrash, FaTrashAlt } from "react-icons/fa";
+import { FaInfo, FaInfoCircle, FaTrash, FaTrashAlt } from "react-icons/fa";
 import useAxiosSecured from "../../../../Hooks/useAxiosSecured";
 import Swal from "sweetalert2";
+import { AiFillWarning } from "react-icons/ai";
+import { Tooltip } from "react-tooltip";
 // TODO: Paymen method setup
 const ClassRow = ({item,idx,refetch}) => {
     const {axiosSecured} = useAxiosSecured();
@@ -69,7 +71,11 @@ const ClassRow = ({item,idx,refetch}) => {
             <td>{instructor}</td>
             <td>${price}</td>
             <th>
-                <button onClick={handlePayment} className="btn btn-info">Pay</button>
+            <div className="indicator">
+                <Tooltip id="my-tooltip" />
+                <span data-tooltip-id="my-tooltip" data-tooltip-content={"This Button Work not perfectly. It confirm payment without payment Info."} data-tooltip-place="top" className="indicator-item top-0 right-1 cursor-pointer"><FaInfoCircle className="text-2xl text-red-600"/></span> 
+                    <button onClick={handlePayment} className="btn btn-info">Pay</button>
+                </div>
             </th>
             <th>
                 <button onClick={handleDelete} className="btn btn-error text-white"><FaTrashAlt/></button>
