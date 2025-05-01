@@ -46,8 +46,8 @@
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/jmjubaer/cycle-bazar.git
-   cd cycle-bazar
+   git clone https://github.com/jmjubaer/music-hub-client.git
+   cd music-hub-client
    ```
 2. Install dependencies:
    ```bash
